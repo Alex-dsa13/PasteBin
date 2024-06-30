@@ -1,0 +1,13 @@
+﻿syntax = "proto3";
+option csharp_namespace = "AuthService.Services.Grpc";
+service GrpcAuthService{
+	rpc ValidateToken(AuthRequest) returns (AuthResponse);
+}
+
+message AuthRequest{
+	string token = 1;
+}
+
+message AuthResponse{
+	int32 userId = 1;
+}
